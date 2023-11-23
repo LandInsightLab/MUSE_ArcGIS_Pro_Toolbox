@@ -113,19 +113,19 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 ### 4.1 Acquiring and Installing MUSE Toolbox
 
-1. Acquire the Python version of ArcGIS Pro by retrieving and extracting the compressed MUSE toolbox file to a designated directory.
-2. In ArcGIS Pro interface, navigate through the “Project” and “Package Manager” tabs, select “python” to ascertain the current Python version (e.g., Python 3.9.11).
+   1. Acquire the Python version of ArcGIS Pro by retrieving and extracting the compressed MUSE toolbox file to a designated directory.
+   2. In ArcGIS Pro interface, navigate through the “Project” and “Package Manager” tabs, select “python” to ascertain the current Python version (e.g., Python 3.9.11).
    ![Figure 4-1 ArcGIS Pro python version](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-1%20ArcGIS%20Pro%20python%20version.png)
-3. Replace the corresponding MUSE_CMD file for the Python version in the “MUSE_CMD” folder. Delete the original version to retain only one MUSE_CMD file. Ensure the “MUSE_Backend” directory is in the same root directory as the MUSE_Script.py script file.
+   3. Replace the corresponding MUSE_CMD file for the Python version in the “MUSE_CMD” folder. Delete the original version to retain only one MUSE_CMD file. Ensure the “MUSE_Backend” directory is in the same root directory as the MUSE_Script.py script file.
    ![Figure 4-2 Replace the MUSE_CMD file](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-2%20Replace%20the%20MUSE_CMD%20file.png)
-4. Import the toolbox in ArcGIS Pro by locating “Project” > “Toolboxes,” right-clicking, selecting “Add Toolbox,” and navigating to the directory where the MUSE toolbox is saved. Open the “MUSE.tbx” file and click “OK.”
+   4. Import the toolbox in ArcGIS Pro by locating “Project” > “Toolboxes,” right-clicking, selecting “Add Toolbox,” and navigating to the directory where the MUSE toolbox is saved. Open the “MUSE.tbx” file and click “OK.”
    ![Figure 4-3 Add toolbox](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-3%20Add%20toolbox.png)
 
 ## 4.2 Running the Toolbox
 
-1. Double-click on the “MUSE_CH” tool to initiate the MUSE toolbox’s primary interface.
+   1. Double-click on the “MUSE_CH” tool to initiate the MUSE toolbox’s primary interface.
    ![Figure 4-4 The main interface of MUSE toolbox](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-4%20The%20main%20interface%20of%20MUSE%20toolbox.png)
-2. Select the mode (model validation or scenario prediction) and proceed with data input and parameterization.
+   2. Select the mode (model validation or scenario prediction) and proceed with data input and parameterization.
    - In model validation mode, provide six data elements and configure Gaussian adjustment parameters.
    - In scenario prediction mode, input data as needed for future predictions.
    
@@ -133,89 +133,89 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 #### (1) Data Input
 
-Sequentially input the required data for the MUSE tool into the first five file input fields. The relationships between the necessary input data and example files in the _TEST_FILES folder are detailed in the following table.
+   Sequentially input the required data for the MUSE tool into the first six file input fields. The relationships between the necessary input data and example files in the _TEST_FILES folder are detailed in the following table.
   
-| Parameters Name                           | File Types                                     | Example Files                           |
-|-------------------------------------------|------------------------------------------------|-----------------------------------------|
-| Urban land use map of starting time        | Base-year Urban Construction Land Data          | [_01_UrbanLand2005_Changsha.tif](_TEST_FILES/_01_UrbanLand2005_Changsha.tif)           |
-| Urban land use map if ending time          | Target-year Urban Construction Land Data        | [_02_UrbanLand2015_Changsha.tif](_TEST_FILES/_02_UrbanLand2015_Changsha.tif)         |
-| Spatial Constraints                        | Urban Development Restriction File             |  [_03_Constraints_Water.tif](_TEST_FILES/_03_Constraints_Water.tif)                |
-| Urban development suitability             | Urban Construction Suitability Probability File| [_04_UrbanSuitability2005.tif](_TEST_FILES/_04_UrbanSuitability2005.tif)            |
-| Stepwise demand of urban development      | Urban Construction Land Increment               | [_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)             |
-| Stepwise percent of organic growth         | Patch organic growth category proportion data  | [_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)                |
+   | Parameters Name                           | File Types                                     | Example Files                           |
+   |-------------------------------------------|------------------------------------------------|-----------------------------------------|
+   | Urban land use map of starting time        | Base-year Urban Construction Land Data          | [_01_UrbanLand2005_Changsha.tif](_TEST_FILES/_01_UrbanLand2005_Changsha.tif)           |
+   | Urban land use map if ending time          | Target-year Urban Construction Land Data        | [_02_UrbanLand2015_Changsha.tif](_TEST_FILES/_02_UrbanLand2015_Changsha.tif)         |
+   | Spatial Constraints                        | Urban Development Restriction File             |  [_03_Constraints_Water.tif](_TEST_FILES/_03_Constraints_Water.tif)                |
+   | Urban development suitability             | Urban Construction Suitability Probability File| [_04_UrbanSuitability2005.tif](_TEST_FILES/_04_UrbanSuitability2005.tif)            |
+   | Stepwise demand of urban development      | Urban Construction Land Increment               | [_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)             |
+   | Stepwise percent of organic growth         | Patch organic growth category proportion data  | [_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)                |
 
 
 #### (2). Expansion Extent Control
 
-Manage expansion extent by deciding to deploy the Gaussian adjustment control module. If selected, confirm the choice as "Yes" in the dropdown box. Input data systematically for city center points, Gaussian correction parameters, and the Gaussian function weight (constrained between 0 and 1). For a detailed understanding, refer to Section 5.2. The corresponding interface for this module is shown in the following figure.
+   Manage expansion extent by deciding to deploy the Gaussian adjustment control module. If selected, confirm the choice as "Yes" in the dropdown box. Input data systematically for city center points, Gaussian correction parameters, and the Gaussian function weight (constrained between 0 and 1). For a detailed understanding, refer to Section 5.2. The corresponding interface for this module is shown in the following figure.
 
-![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
+   ![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
 
-| Parameters Name | File Types | Example Files |
-|------------------|------------|---------------|
-| Urban Center | City center raster data | _07_CityCenter.tif |
-| Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
+   | Parameters Name | File Types | Example Files |
+   |------------------|------------|---------------|
+   | Urban Center | City center raster data | _07_CityCenter.tif |
+   | Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
 
 #### 3. Input of Global Parameters
 
-In configuring global parameters, five crucial parameters need precise settings. Pay special attention to the total duration of the simulation period, ensuring it does not exceed the temporal span in the urban construction land increment data. The designated time span parameter is determined by subtracting one from the total number of rows in the increment data. For example, if the data encompasses 11 rows, spanning incremental information from 2006 to 2015, the time span parameter is 10 years. When configuring the simulation period length, the value should be less than or equal to 10 years, ensuring the disparity between simulation end and start does not exceed this limit. The significance and allowable ranges for each parameter in the global parameter section are detailed in the following table:
+   In configuring global parameters, five crucial parameters need precise settings. Pay special attention to the total duration of the simulation period, ensuring it does not exceed the temporal span in the urban construction land increment data. The designated time span parameter is determined by subtracting one from the total number of rows in the increment data. For example, if the data encompasses 11 rows, spanning incremental information from 2006 to 2015, the time span parameter is 10 years. When configuring the simulation period length, the value should be less than or equal to 10 years, ensuring the disparity between simulation end and start does not exceed this limit. The significance and allowable ranges for each parameter in the global parameter section are detailed in the following table:
 
-| Parameters Name      | Parameters Description                                                                 | Value Range     |
-|-----------------------|------------------------------------------------------------------------------------------|-----------------|
-| Starting time         | Starting step of the model simulation                                                    | 1~36767         |
-| Ending time           | Ending step of the model simulation                                                      | 1~36767         |
-| Location uncertainty  | Proportion of non-randomly selected seeds in the seed selection process for patches       | 0~1             |
-| Pruning parameter     | The size of the patch seed unit library is equal to the total number of developable grid units sorted in descending order based on development probability, multiplied by a pruning coefficient. | 0~1             |
-| Type of neighborhood  | In the context of 4-neighborhood, it corresponds to the Von Neumann neighborhood, while in the case of 8-neighborhood, it corresponds to the Moore neighborhood. | 4, 8            |
+   | Parameters Name      | Parameters Description                                                                 | Value Range     |
+   |-----------------------|------------------------------------------------------------------------------------------|-----------------|
+   | Starting time         | Starting step of the model simulation                                                    | 1~36767         |
+   | Ending time           | Ending step of the model simulation                                                      | 1~36767         |
+   | Location uncertainty  | Proportion of non-randomly selected seeds in the seed selection process for patches       | 0~1             |
+   | Pruning parameter     | The size of the patch seed unit library is equal to the total number of developable grid units sorted in descending order based on development probability, multiplied by a pruning coefficient. | 0~1             |
+   | Type of neighborhood  | In the context of 4-neighborhood, it corresponds to the Von Neumann neighborhood, while in the case of 8-neighborhood, it corresponds to the Moore neighborhood. | 4, 8            |
 
 
 ### (4) Selection of Patch Size Generator
 
-Choose from three available patch size generators in MUSE:
+   Choose from three available patch size generators in MUSE:
 
-- **Lognormal Distribution:** Utilizes a lognormal distribution random generator, requiring parameters like mean and log standard deviation.
-- **Power-law Distribution:** Relies on a power-law distribution random generator, requiring parameters like scaling constant and exponent.
-- **Historical Period Patch Sizes:** Select this option if you have a custom CSV document with detailed patch size specifications .
+   - **Lognormal Distribution:** Utilizes a lognormal distribution random generator, requiring parameters like mean and log standard deviation.
+   - **Power-law Distribution:** Relies on a power-law distribution random generator, requiring parameters like scaling constant and exponent.
+   - **Historical Period Patch Sizes:** Select this option if you have a custom CSV document with detailed patch size specifications .
 
 ### (5) Selection of Patch Generation Engine
 
-MUSE provides four algorithmic engines for patch generation. Notably, selecting the neighborhood control patch generation engine configures the patch position uncertainty parameter to 1 and the neighborhood type parameter to 8. This adjustment is due to the reliance on stochastic processes and iterative neighborhood mechanisms inherent in this engine.
+   MUSE provides four algorithmic engines for patch generation. Notably, selecting the neighborhood control patch generation engine configures the patch position uncertainty parameter to 1 and the neighborhood type parameter to 8. This adjustment is due to the reliance on stochastic processes and iterative neighborhood mechanisms inherent in this engine.
 
-For detailed parameters associated with each engine, refer to the following table:
+   For detailed parameters associated with each engine, refer to the following table:
 
-| Engines Name | Parameters Name | Parameters Description                                                | Default Value | Value Range      |
-|--------------|-----------------|-------------------------------------------------------------------------|---------------|------------------|
-| SPGE         | -               | This engine does not require any input parameters.                      | -             | -                |
-| PPGE         | N               | N and D together influence the longest dimension of the plaque         | 1             | Greater than 0    |
-|              | D               | -                                                                       | 2             | Greater than 0    |
-|              | A               | The number of arms                                                      | 2             | Not less than 0   |
-|              | O               | Patch orientation                                                      | 45            | Not less than 0   |
-|              | suit_weight     | The weight of the patch shape during the generation process            | 0.5           | 0-1              |
-|              | shape_weight    | The weight of suitability during the generation process                 | 0.5           | 0-1              |
-| Nei-PGE      | beta            | Whether neighborhood repetition based on seed units controls the compactness of the patch | 1.6 | Greater than 0    |
-| Dis-PGE      | delta           | Control of patch shape based on a distance decay mechanism               | 2             | Any real number  |
+   | Engines Name | Parameters Name | Parameters Description                                                | Default Value | Value Range      |
+   |--------------|-----------------|-------------------------------------------------------------------------|---------------|------------------|
+   | SPGE         | -               | This engine does not require any input parameters.                      | -             | -                |
+   | PPGE         | N               | N and D together influence the longest dimension of the plaque         | 1             | Greater than 0    |
+   |              | D               | -                                                                       | 2             | Greater than 0    |
+   |              | A               | The number of arms                                                      | 2             | Not less than 0   |
+   |              | O               | Patch orientation                                                      | 45            | Not less than 0   |
+   |              | suit_weight     | The weight of the patch shape during the generation process            | 0.5           | 0-1              |
+   |              | shape_weight    | The weight of suitability during the generation process                 | 0.5           | 0-1              |
+   | Nei-PGE      | beta            | Whether neighborhood repetition based on seed units controls the compactness of the patch | 1.6 | Greater than 0    |
+   | Dis-PGE      | delta           | Control of patch shape based on a distance decay mechanism               | 2             | Any real number  |
   
 #### (6) Output Location Selection
 
-When selecting output results, provide a filename for result preservation. You have the choice to append a file extension, e.g., "Exp_CS.tif," or input "Exp_CS" directly, letting the model complete the filename. See Figure 4-6 for an example of model parameter configurations.
-![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
+   When selecting output results, provide a filename for result preservation. You have the choice to append a file extension, e.g., "Exp_CS.tif," or input "Exp_CS" directly, letting the model complete the filename. See Figure 4-6 for an example of model parameter configurations.
+   ![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
 #### (7) Examination of Simulation Results
 
-After the simulation concludes, the resultant files are saved in the specified directory. Access relevant information by choosing "View Details." In Figure 4-7, performance metrics like Kappa, FoM (Figure of Merit), and OA (Operational Accuracy) are available. The last line provides insight into the temporal duration of the model's execution.
+   After the simulation concludes, the resultant files are saved in the specified directory. Access relevant information by choosing "View Details." In Figure 4-7, performance metrics like Kappa, FoM (Figure of Merit), and OA (Operational Accuracy) are available. The last line provides insight into the temporal duration of the model's execution.
 
-Note: In the example, a warning appears due to incongruities in row and column numbers between the restricted file and other dataset files. The model issues a warning when the difference is within 5; exceeding this threshold results in an error, prompting the model to stop. Pay careful attention to spatial consistency in simulated data during the data preparation phase to prevent such warnings and errors.
-![Figure 4-7 Simulation output](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-7%20Simulation%20output.png)
+   Note: In the example, a warning appears due to incongruities in row and column numbers between the restricted file and other dataset files. The model issues a warning when the difference is within 5; exceeding this threshold results in an error, prompting the model to stop. Pay careful attention to spatial consistency in simulated data during the data preparation phase to prevent such warnings and errors.
+   ![Figure 4-7 Simulation output](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-7%20Simulation%20output.png)
   
 
 ### 4.2.2 Scenario Simulation
 
-- Initiate scenario prediction mode for simulating future urban construction land distributions. No input of urban land data for the simulation end period is required.
+   Initiate scenario prediction mode for simulating future urban construction land distributions. No input of urban land data for the simulation end period is required.
 
    ![Figure 4-8 Scenario Simulation Interface](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-8%20Scenario%20Simulation%20Interface.png)
 
 ## 4.3 Explanation of Simulation Results
 
-- Examine the results revealing pixel values from 0 to n. Interpret spatial arrangement of newly allocated urban construction land at each temporal interval.
+   Examine the results revealing pixel values from 0 to n. Interpret spatial arrangement of newly allocated urban construction land at each temporal interval.
 
    ![Figure 4-9 Simulation results of urban construction land in Changsha from 2005 to 2015](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-9%20Simulation%20results%20of%20urban%20construction%20land%20in%20Changsha%20from%202005%20to%202015.png)
 
