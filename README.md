@@ -164,7 +164,13 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 - Configure five pivotal parameters, including simulation start and end periods, patch position uncertainty, seed cell library pruning coefficient, and neighborhood type.
 
-   ![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
+#### (4) Selection of Patch Size Generator
+
+- Opt for one of three available patch size generators: "Lognormal Distribution," "Power-law Distribution," or "Historical Period Patch Sizes."
+
+#### (5) Selection of Patch Generation Engine
+
+- Choose among four algorithmic engines for patch generation. See Table 5 for an explanation of engine control parameters.
 
 | Engines Name | Parameters Name | Parameters Description                                                | Default Value | Value Range      |
 |--------------|-----------------|-------------------------------------------------------------------------|---------------|------------------|
@@ -178,16 +184,10 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 | Nei-PGE      | beta            | Whether neighborhood repetition based on seed units controls the compactness of the patch | 1.6 | Greater than 0    |
 | Dis-PGE      | delta           | Control of patch shape based on a distance decay mechanism               | 2             | Any real number  |
 
-
-#### (4) Selection of Patch Size Generator
-
-- Opt for one of three available patch size generators: "Lognormal Distribution," "Power-law Distribution," or "Historical Period Patch Sizes."
-
-#### (5) Selection of Patch Generation Engine
-
-- Choose among four algorithmic engines for patch generation. See Table 5 for an explanation of engine control parameters.
-
 #### (6) Output Location Selection
+
+![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
+
 
 - Provide a filename for result preservation and select output results.
 
