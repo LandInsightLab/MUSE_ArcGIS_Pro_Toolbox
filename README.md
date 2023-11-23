@@ -134,6 +134,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 #### (1) Data Input
 
 - Sequentially input data for the MUSE tool in the first five file input fields. See Table 2 for information overview of input files.
+  
 | Parameters Name                           | File Types                                     | Example Files                           |
 |-------------------------------------------|------------------------------------------------|-----------------------------------------|
 | Urban land use map of starting time        | Base-year Urban Construction Land Data          | [_01_UrbanLand2005_Changsha.tif](_TEST_FILES/_01_UrbanLand2005_Changsha.tif)           |
