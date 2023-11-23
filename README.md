@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="180" src="./resources/logo/MUSE_LOGO2.png" alt="MUSE_LOGO">
+  <img width="180" src="./resources/LOGO/MUSE_LOGO2.png" alt="MUSE_LOGO">
   <h1 align="center">MUSE ArcGIS Toolbox</h1>
 </p>
 
@@ -115,16 +115,16 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 1. Acquire the Python version of ArcGIS Pro by retrieving and extracting the compressed MUSE toolbox file to a designated directory.
 2. In ArcGIS Pro interface, navigate through the “Project” and “Package Manager” tabs, select “python” to ascertain the current Python version (e.g., Python 3.9.11).
-   ![Figure 4-1 ArcGIS Pro python version](path/to/figure-1.png)
+   ![Figure 4-1 ArcGIS Pro python version](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-1%20ArcGIS%20Pro%20python%20version.png)
 3. Replace the corresponding MUSE_CMD file for the Python version in the “MUSE_CMD” folder. Delete the original version to retain only one MUSE_CMD file. Ensure the “MUSE_Backend” directory is in the same root directory as the MUSE_Script.py script file.
-   ![Figure 4-2 Replace the MUSE_CMD file](path/to/figure-2.png)
+   ![Figure 4-2 Replace the MUSE_CMD file](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-2%20Replace%20the%20MUSE_CMD%20file.png)
 4. Import the toolbox in ArcGIS Pro by locating “Project” > “Toolboxes,” right-clicking, selecting “Add Toolbox,” and navigating to the directory where the MUSE toolbox is saved. Open the “MUSE.tbx” file and click “OK.”
-   ![Figure 4-3 Add toolbox](path/to/figure-3.png)
+   ![Figure 4-3 Add toolbox](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-3%20Add%20toolbox.png)
 
 ## 4.2 Running the Toolbox
 
 1. Double-click on the “MUSE_CH” tool to initiate the MUSE toolbox’s primary interface.
-   ![Figure 4-4 The main interface of MUSE toolbox](path/to/figure-4.png)
+   ![Figure 4-4 The main interface of MUSE toolbox](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-4%20The%20main%20interface%20of%20MUSE%20toolbox.png)
 2. Select the mode (model validation or scenario prediction) and proceed with data input and parameterization.
    - In model validation mode, provide six data elements and configure Gaussian adjustment parameters.
    - In scenario prediction mode, input data as needed for future predictions.
@@ -143,7 +143,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 - Manage expansion extent by deploying the Gaussian adjustment control module. Input data for city center points, Gaussian correction parameters, and the weight representing the attractiveness of urban land development to the city center.
 
-   ![Figure 4-5 Parameter input interface of expansion degree control module](path/to/figure-5.png)
+   ![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
 
    | Parameters Name | File Types | Example Files |
    |------------------|------------|---------------|
@@ -154,7 +154,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 - Configure five pivotal parameters, including simulation start and end periods, patch position uncertainty, seed cell library pruning coefficient, and neighborhood type.
 
-   ![Figure 4-6 Example model parameter settings](path/to/figure-6.png)
+   ![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
 
    | Parameters Name | Parameters Description | Value Range |
    |------------------|-------------------------|-------------|
@@ -173,17 +173,17 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 - Provide a filename for result preservation and select output results.
 
-   ![Figure 4-7 Simulation output](path/to/figure-7.png)
+   ![Figure 4-7 Simulation output](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-7%20Simulation%20output.png)
 
 ### 4.2.2 Scenario Simulation
 
 - Initiate scenario prediction mode for simulating future urban construction land distributions. No input of urban land data for the simulation end period is required.
 
-   ![Figure 4-8 Scenario Simulation Interface](path/to/figure-8.png)
+   ![Figure 4-8 Scenario Simulation Interface](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-8%20Scenario%20Simulation%20Interface.png)
 
 ## 4.3 Explanation of Simulation Results
 
 - Examine the results revealing pixel values from 0 to n. Interpret spatial arrangement of newly allocated urban construction land at each temporal interval.
 
-   ![Figure 4-9 Simulation results of urban construction land in Changsha from 2005 to 2015](path/to/figure-9.png)
+   ![Figure 4-9 Simulation results of urban construction land in Changsha from 2005 to 2015](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-9%20Simulation%20results%20of%20urban%20construction%20land%20in%20Changsha%20from%202005%20to%202015.png)
 
