@@ -131,7 +131,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
    
 ### 4.2.1 Model Validation
 
-####(1) Data Input
+#### (1) Data Input
 
 - Sequentially input data for the MUSE tool in the first five file input fields. See Table 2 for information overview of input files.
   | Parameters Name | File Types | Example Files |
@@ -139,7 +139,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
   | Urban land use map of starting time | Base-year Urban Construction Land Data | _01_UrbanLand2005_Changsha.tif |
   | ... (continue with the other parameters) |
 
-####(2) Expansion Extent Control
+#### (2) Expansion Extent Control
 
 - Manage expansion extent by deploying the Gaussian adjustment control module. Input data for city center points, Gaussian correction parameters, and the weight representing the attractiveness of urban land development to the city center.
 
@@ -150,7 +150,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
    | Urban Center | City center raster data | _07_CityCenter.tif |
    | Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
 
-####(3) Input of Global Parameters
+#### (3) Input of Global Parameters
 
 - Configure five pivotal parameters, including simulation start and end periods, patch position uncertainty, seed cell library pruning coefficient, and neighborhood type.
 
@@ -161,15 +161,15 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
    | Starting time | Starting step of the model simulation | 1~36767 |
    | ... (continue with the other parameters) |
 
-####(4) Selection of Patch Size Generator
+#### (4) Selection of Patch Size Generator
 
 - Opt for one of three available patch size generators: "Lognormal Distribution," "Power-law Distribution," or "Historical Period Patch Sizes."
 
-####(5) Selection of Patch Generation Engine
+#### (5) Selection of Patch Generation Engine
 
 - Choose among four algorithmic engines for patch generation. See Table 5 for an explanation of engine control parameters.
 
-####(6) Output Location Selection
+#### (6) Output Location Selection
 
 - Provide a filename for result preservation and select output results.
 
