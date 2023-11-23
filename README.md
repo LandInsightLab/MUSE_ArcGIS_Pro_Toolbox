@@ -133,7 +133,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 #### (1) Data Input
 
-- Sequentially input data for the MUSE tool in the first five file input fields. See Table 2 for information overview of input files.
+Sequentially input the required data for the MUSE tool into the first five file input fields. The relationships between the necessary input data and example files in the _TEST_FILES folder are detailed in the following table.
   
 | Parameters Name                           | File Types                                     | Example Files                           |
 |-------------------------------------------|------------------------------------------------|-----------------------------------------|
@@ -145,11 +145,20 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 | Stepwise percent of organic growth         | Patch organic growth category proportion data  | [_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)                |
 
 
-#### (2) Expansion Extent Control
+#### (2). Expansion Extent Control
 
-- Manage expansion extent by deploying the Gaussian adjustment control module. Input data for city center points, Gaussian correction parameters, and the weight representing the attractiveness of urban land development to the city center.
+Manage expansion extent by deciding to deploy the Gaussian adjustment control module. If selected, confirm the choice as "Yes" in the dropdown box. Input data systematically for city center points, Gaussian correction parameters, and the Gaussian function weight (constrained between 0 and 1). For a detailed understanding, refer to Section 5.2. The corresponding interface for this module is shown in the following figure.
 
-   ![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
+![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
+
+| Parameters Name | File Types | Example Files |
+|------------------|------------|---------------|
+| Urban Center | City center raster data | _07_CityCenter.tif |
+| Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
+
+#### 3. Input of Global Parameters
+
+In configuring global parameters, five crucial parameters need precise settings. Pay special attention to the total duration of the simulation period, ensuring it does not exceed the temporal span in the urban construction land increment data. The designated time span parameter is determined by subtracting one from the total number of rows in the increment data. For example, if the data encompasses 11 rows, spanning incremental information from 2006 to 2015, the time span parameter is 10 years. When configuring the simulation period length, the value should be less than or equal to 10 years, ensuring the disparity between simulation end and start does not exceed this limit. The significance and allowable ranges for each parameter in the global parameter section are detailed in the following table:
 
 | Parameters Name      | Parameters Description                                                                 | Value Range     |
 |-----------------------|------------------------------------------------------------------------------------------|-----------------|
@@ -160,17 +169,19 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 | Type of neighborhood  | In the context of 4-neighborhood, it corresponds to the Von Neumann neighborhood, while in the case of 8-neighborhood, it corresponds to the Moore neighborhood. | 4, 8            |
 
 
-#### (3) Input of Global Parameters
+### (4) Selection of Patch Size Generator
 
-- Configure five pivotal parameters, including simulation start and end periods, patch position uncertainty, seed cell library pruning coefficient, and neighborhood type.
+Choose from three available patch size generators in MUSE:
 
-#### (4) Selection of Patch Size Generator
+- **Lognormal Distribution:** Utilizes a lognormal distribution random generator, requiring parameters like mean and log standard deviation.
+- **Power-law Distribution:** Relies on a power-law distribution random generator, requiring parameters like scaling constant and exponent.
+- **Historical Period Patch Sizes:** Select this option if you have a custom CSV document with detailed patch size specifications .
 
-- Opt for one of three available patch size generators: "Lognormal Distribution," "Power-law Distribution," or "Historical Period Patch Sizes."
+### (5) Selection of Patch Generation Engine
 
-#### (5) Selection of Patch Generation Engine
+MUSE provides four algorithmic engines for patch generation. Notably, selecting the neighborhood control patch generation engine configures the patch position uncertainty parameter to 1 and the neighborhood type parameter to 8. This adjustment is due to the reliance on stochastic processes and iterative neighborhood mechanisms inherent in this engine.
 
-- Choose among four algorithmic engines for patch generation. See Table 5 for an explanation of engine control parameters.
+For detailed parameters associated with each engine, refer to the following table:
 
 | Engines Name | Parameters Name | Parameters Description                                                | Default Value | Value Range      |
 |--------------|-----------------|-------------------------------------------------------------------------|---------------|------------------|
