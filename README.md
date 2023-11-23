@@ -40,59 +40,57 @@ With MUSE, users gain the capability to create diverse spatial patterns for urba
 
 To set up MUSE Toolbox, navigate to the installation directory, where the example files are stored. This directory contains 9 essential files, including 4 CSV files and 5 TIFF files, crucial for MUSE's operation. Data preparation techniques using these sample files are detailed in the documentation.
 
-## 2.1 CSV Documents
+## 3.1 CSV Documents
 
-### 2.1.1 Stepwise Demand of Urban Development
+### 3.1.1 Stepwise Demand of Urban Development
 
 - **File**: [\_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)
 - **Description**: Records yearly rise in the number of urban land grid cells and the proportion of organic patches from 2005 to 2015.
 
-### 2.1.2 History Patch Size Controller Data
+### 3.1.2 History Patch Size Controller Data
 
 - **File**: [\_09_History_CellSize.csv](_TEST_FILES/_09_History_CellSize.csv)
 - **Description**: Records 5000 patch sizes in historical periods.
 
-### 2.1.3 Gaussian Correction Parameter Data
+### 3.1.3 Gaussian Correction Parameter Data
 
 - **File**: [\_08_GaussianParams.csv](_TEST_FILES/_08_GaussianParams.csv)
 - **Description**: Documents mean parameter 'b' and standard deviation parameter 'c' for Gaussian correction from 2005 to 2015.
 
-### 2.1.4 Stepwise Percent of Organic Growth Data
+### 3.1.4 Stepwise Percent of Organic Growth Data
 
 - **File**: [\_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)
 - **Description**: Documents area ratios of newly added organic patches from 2005 to 2015.
 
 Feel free to refer to the documentation for detailed information on data preparation and utilization in MUSE.
 
-# 3. Data Preparation
+## 3.2 TIF Files
 
 To ensure the proper operation of the MUSE program, users are required to provide 5 TIF files containing specific spatial data crucial for model execution. These files cover essential information such as the distribution of urban construction land at the base and model validation simulation sites, probability of urban construction appropriateness, urban development construction constraints, and urban center point data. It is imperative that these files maintain rigorous consistency in spatial features, including the same number of rows and columns, projection coordinates, and spatial resolution. Refer to Figure 3-6 for an example file.
 
 ![Figure 2-1: Model Input Data Files](https://github.com/Mr-ShiRui/MUSE/blob/master/resources/doc/2-1%20Model%20Input%20Data%20Files.png)
 
-## 2.2 TIF Files Overview
-
-### 2.2.1. Base Period Urban Construction Land Data
+### 3.2.1. Base Period Urban Construction Land Data
 - **Function**: Describes the spatial distribution of urban construction land during the baseline period. 
 - **Format**: Values are denoted by 0 and 1, where 0 signifies undeveloped land and 1 represents developed urban areas.
 - **File Name**: [_01_UrbanLand2005_Changsha.tif](_TEST_FILES/_01_UrbanLand2005_Changsha.tif)
 
-### 2.2.2. Model Validation Simulation Urban Construction Land Data
+### 3.2.2. Model Validation Simulation Urban Construction Land Data
 - **Function**: Reflects the urban construction land distribution at the validation simulation point.
 - **Format**: Similar to the base period data, values range from 0 to 1, representing undeveloped and developed land.
 - **File Name**: [_02_UrbanLand2015_Changsha.tif](_TEST_FILES/_02_UrbanLand2015_Changsha.tif)
 
-### 2.2.3. Urban Construction Suitability Probability File
+### 3.2.3. Urban Construction Suitability Probability File
 - **Function**: Represents the probability of urban construction suitability based on diverse driving factor data.
 - **Format**: Values range from 0 to 1, where higher values indicate higher suitability for urban development.
 - **File Name**: [_04_UrbanSuitability2005.tif](_TEST_FILES/_04_UrbanSuitability2005.tif)
 
-### 2.2.4. Urban Development Construction Restriction File
+### 3.2.4. Urban Development Construction Restriction File
 - **Function**: Provides information on spatial constraints for urban development, such as water bodies, protected farmland, historical and cultural conservation areas, etc.
 - **Format**: Values are expressed as 0 for open development areas and 1 for restricted development areas.
 - **File Name**: [_03_Constraints_Water.tif](_TEST_FILES/_03_Constraints_Water.tif)
 
-### 2.2.5. Urban Center Point Data
+### 3.2.5. Urban Center Point Data
 - **Function**: Specifies the locations of urban center points, typically situated in areas like central business districts (CBD), government institutions, or key city hubs.
 - **Format**: Values vary between 0 and 1, with 0 representing non-center grid cells and 1 denoting center grid cells.
 - **File Name**: [_07_CityCenter.tif](_TEST_FILES/_07_CityCenter.tif)
@@ -109,4 +107,83 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 | Urban Development and Construction Restriction File         | Set based on Real Conditions and Simulated Scenario Requirements | 0 (Developable Area), 1 (Restricted Development Area) | [_03_Constraints_Water.tif](_TEST_FILES/_03_Constraints_Water.tif)      |
 | Urban Center Point Data                                      | Set based on Real Conditions and Simulated Scenario Requirements | 0 (Non-Center Point), 1 (Center Point)               | [_07_CityCenter.tif](_TEST_FILES/_07_CityCenter.tif)              |
 
+# User Guide for MUSE Toolbox
+
+## 4. Toolbox Installation
+
+### 4.1 Acquiring and Installing MUSE Toolbox
+
+1. Acquire the Python version of ArcGIS Pro by retrieving and extracting the compressed MUSE toolbox file to a designated directory.
+2. In ArcGIS Pro interface, navigate through the “Project” and “Package Manager” tabs, select “python” to ascertain the current Python version (e.g., Python 3.9.11).
+   ![Figure 4-1 ArcGIS Pro python version](path/to/figure-1.png)
+3. Replace the corresponding MUSE_CMD file for the Python version in the “MUSE_CMD” folder. Delete the original version to retain only one MUSE_CMD file. Ensure the “MUSE_Backend” directory is in the same root directory as the MUSE_Script.py script file.
+   ![Figure 4-2 Replace the MUSE_CMD file](path/to/figure-2.png)
+4. Import the toolbox in ArcGIS Pro by locating “Project” > “Toolboxes,” right-clicking, selecting “Add Toolbox,” and navigating to the directory where the MUSE toolbox is saved. Open the “MUSE.tbx” file and click “OK.”
+   ![Figure 4-3 Add toolbox](path/to/figure-3.png)
+
+## 4.2 Running the Toolbox
+
+1. Double-click on the “MUSE_CH” tool to initiate the MUSE toolbox’s primary interface.
+   ![Figure 4-4 The main interface of MUSE toolbox](path/to/figure-4.png)
+2. Select the mode (model validation or scenario prediction) and proceed with data input and parameterization.
+   - In model validation mode, provide six data elements and configure Gaussian adjustment parameters.
+   - In scenario prediction mode, input data as needed for future predictions.
+   
+### 4.2.1 Model Validation
+
+####(1) Data Input
+
+- Sequentially input data for the MUSE tool in the first five file input fields. See Table 2 for information overview of input files.
+  | Parameters Name | File Types | Example Files |
+  |------------------|------------|---------------|
+  | Urban land use map of starting time | Base-year Urban Construction Land Data | _01_UrbanLand2005_Changsha.tif |
+  | ... (continue with the other parameters) |
+
+####(2) Expansion Extent Control
+
+- Manage expansion extent by deploying the Gaussian adjustment control module. Input data for city center points, Gaussian correction parameters, and the weight representing the attractiveness of urban land development to the city center.
+
+   ![Figure 4-5 Parameter input interface of expansion degree control module](path/to/figure-5.png)
+
+   | Parameters Name | File Types | Example Files |
+   |------------------|------------|---------------|
+   | Urban Center | City center raster data | _07_CityCenter.tif |
+   | Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
+
+####(3) Input of Global Parameters
+
+- Configure five pivotal parameters, including simulation start and end periods, patch position uncertainty, seed cell library pruning coefficient, and neighborhood type.
+
+   ![Figure 4-6 Example model parameter settings](path/to/figure-6.png)
+
+   | Parameters Name | Parameters Description | Value Range |
+   |------------------|-------------------------|-------------|
+   | Starting time | Starting step of the model simulation | 1~36767 |
+   | ... (continue with the other parameters) |
+
+####(4) Selection of Patch Size Generator
+
+- Opt for one of three available patch size generators: "Lognormal Distribution," "Power-law Distribution," or "Historical Period Patch Sizes."
+
+####(5) Selection of Patch Generation Engine
+
+- Choose among four algorithmic engines for patch generation. See Table 5 for an explanation of engine control parameters.
+
+####(6) Output Location Selection
+
+- Provide a filename for result preservation and select output results.
+
+   ![Figure 4-7 Simulation output](path/to/figure-7.png)
+
+### 4.2.2 Scenario Simulation
+
+- Initiate scenario prediction mode for simulating future urban construction land distributions. No input of urban land data for the simulation end period is required.
+
+   ![Figure 4-8 Scenario Simulation Interface](path/to/figure-8.png)
+
+## 4.3 Explanation of Simulation Results
+
+- Examine the results revealing pixel values from 0 to n. Interpret spatial arrangement of newly allocated urban construction land at each temporal interval.
+
+   ![Figure 4-9 Simulation results of urban construction land in Changsha from 2005 to 2015](path/to/figure-9.png)
 
