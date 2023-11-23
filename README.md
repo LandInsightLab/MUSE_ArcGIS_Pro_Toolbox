@@ -183,15 +183,18 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 |              | shape_weight    | The weight of suitability during the generation process                 | 0.5           | 0-1              |
 | Nei-PGE      | beta            | Whether neighborhood repetition based on seed units controls the compactness of the patch | 1.6 | Greater than 0    |
 | Dis-PGE      | delta           | Control of patch shape based on a distance decay mechanism               | 2             | Any real number  |
-
+  
 #### (6) Output Location Selection
 
+When selecting output results, provide a filename for result preservation. You have the choice to append a file extension, e.g., "Exp_CS.tif," or input "Exp_CS" directly, letting the model complete the filename. See Figure 4-6 for an example of model parameter configurations.
 ![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
+#### (7) Examination of Simulation Results
 
+After the simulation concludes, the resultant files are saved in the specified directory. Access relevant information by choosing "View Details." In Figure 4-7, performance metrics like Kappa, FoM (Figure of Merit), and OA (Operational Accuracy) are available. The last line provides insight into the temporal duration of the model's execution.
 
-- Provide a filename for result preservation and select output results.
-
-   ![Figure 4-7 Simulation output](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-7%20Simulation%20output.png)
+Note: In the example, a warning appears due to incongruities in row and column numbers between the restricted file and other dataset files. The model issues a warning when the difference is within 5; exceeding this threshold results in an error, prompting the model to stop. Pay careful attention to spatial consistency in simulated data during the data preparation phase to prevent such warnings and errors.
+![Figure 4-7 Simulation output](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-7%20Simulation%20output.png)
+  
 
 ### 4.2.2 Scenario Simulation
 
