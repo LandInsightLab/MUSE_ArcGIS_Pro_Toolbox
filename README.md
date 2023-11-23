@@ -215,7 +215,7 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
 ## 4.3 Explanation of Simulation Results
 
-   Examine the results revealing pixel values from 0 to n. Interpret spatial arrangement of newly allocated urban construction land at each temporal interval.
+   After completing the simulation, examine the results with pixel values ranging from 0 to n. In the symbol system of ArcGIS software, utilizing a unique value display method, these pixel values appear sequentially as 0, 1, i…n. Here, i represents the value designated at the beginning of the simulation, incremented by 1, and n is the value defined at the simulation's conclusion. This configuration provides a clear depiction of the spatial arrangement of newly allocated urban construction land at each temporal interval.
 
    ![Figure 4-9 Simulation results of urban construction land in Changsha from 2005 to 2015](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-9%20Simulation%20results%20of%20urban%20construction%20land%20in%20Changsha%20from%202005%20to%202015.png)
 
