@@ -44,22 +44,22 @@ To set up MUSE Toolbox, navigate to the installation directory, where the exampl
 
 ### 3.1.1 Stepwise Demand of Urban Development
 
-- **File**: [\_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)
+- **File**: [_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)
 - **Description**: Records yearly rise in the number of urban land grid cells and the proportion of organic patches from 2005 to 2015.
 
 ### 3.1.2 History Patch Size Controller Data
 
-- **File**: [\_09_History_CellSize.csv](_TEST_FILES/_09_History_CellSize.csv)
+- **File**: [_09_History_CellSize.csv](_TEST_FILES/_09_History_CellSize.csv)
 - **Description**: Records 5000 patch sizes in historical periods.
 
 ### 3.1.3 Gaussian Correction Parameter Data
 
-- **File**: [\_08_GaussianParams.csv](_TEST_FILES/_08_GaussianParams.csv)
+- **File**: [_08_GaussianParams.csv](_TEST_FILES/_08_GaussianParams.csv)
 - **Description**: Documents mean parameter 'b' and standard deviation parameter 'c' for Gaussian correction from 2005 to 2015.
 
 ### 3.1.4 Stepwise Percent of Organic Growth Data
 
-- **File**: [\_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)
+- **File**: [_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)
 - **Description**: Documents area ratios of newly added organic patches from 2005 to 2015.
 
 Feel free to refer to the documentation for detailed information on data preparation and utilization in MUSE.
@@ -134,10 +134,15 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 #### (1) Data Input
 
 - Sequentially input data for the MUSE tool in the first five file input fields. See Table 2 for information overview of input files.
-  | Parameters Name | File Types | Example Files |
-  |------------------|------------|---------------|
-  | Urban land use map of starting time | Base-year Urban Construction Land Data | _01_UrbanLand2005_Changsha.tif |
-  | ... (continue with the other parameters) |
+| Parameters Name                           | File Types                                     | Example Files                           |
+|-------------------------------------------|------------------------------------------------|-----------------------------------------|
+| Urban land use map of starting time        | Base-year Urban Construction Land Data          | [_01_UrbanLand2005_Changsha.tif](_TEST_FILES/_01_UrbanLand2005_Changsha.tif)           |
+| Urban land use map if ending time          | Target-year Urban Construction Land Data        | [_02_UrbanLand2015_Changsha.tif](_TEST_FILES/_02_UrbanLand2015_Changsha.tif)         |
+| Spatial Constraints                        | Urban Development Restriction File             |  [_03_Constraints_Water.tif](_TEST_FILES/_03_Constraints_Water.tif)                |
+| Urban development suitability             | Urban Construction Suitability Probability File| [_04_UrbanSuitability2005.tif](_TEST_FILES/_04_UrbanSuitability2005.tif)            |
+| Stepwise demand of urban development      | Urban Construction Land Increment               | [_05_StepwiseIncreasment.csv](_TEST_FILES/_05_StepwiseIncreasment.csv)             |
+| Stepwise percent of organic growth         | Patch organic growth category proportion data  | [_06_StepwiseOrganic.csv](_TEST_FILES/_06_StepwiseOrganic.csv)                |
+
 
 #### (2) Expansion Extent Control
 
@@ -145,10 +150,14 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
    ![Figure 4-5 Parameter input interface of expansion degree control module](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-5%20Parameter%20input%20interface%20of%20expansion%20degree%20control%20module.png)
 
-   | Parameters Name | File Types | Example Files |
-   |------------------|------------|---------------|
-   | Urban Center | City center raster data | _07_CityCenter.tif |
-   | Gaussian Parameters | Parameters data based on Gaussian correction rule | _08_GaussianParams.tif |
+| Parameters Name      | Parameters Description                                                                 | Value Range     |
+|-----------------------|------------------------------------------------------------------------------------------|-----------------|
+| Starting time         | Starting step of the model simulation                                                    | 1~36767         |
+| Ending time           | Ending step of the model simulation                                                      | 1~36767         |
+| Location uncertainty  | Proportion of non-randomly selected seeds in the seed selection process for patches       | 0~1             |
+| Pruning parameter     | The size of the patch seed unit library is equal to the total number of developable grid units sorted in descending order based on development probability, multiplied by a pruning coefficient. | 0~1             |
+| Type of neighborhood  | In the context of 4-neighborhood, it corresponds to the Von Neumann neighborhood, while in the case of 8-neighborhood, it corresponds to the Moore neighborhood. | 4, 8            |
+
 
 #### (3) Input of Global Parameters
 
@@ -156,10 +165,18 @@ Feel free to refer to Table 1 for a quick reference to each model input data fil
 
    ![Figure 4-6 Example model parameter settings](https://github.com/Mr-ShiRui/MUSE_ArcGIS_Pro_Toolbox/blob/master/resources/doc/4-6%20Example%20model%20parameter%20settings.png)
 
-   | Parameters Name | Parameters Description | Value Range |
-   |------------------|-------------------------|-------------|
-   | Starting time | Starting step of the model simulation | 1~36767 |
-   | ... (continue with the other parameters) |
+| Engines Name | Parameters Name | Parameters Description                                                | Default Value | Value Range      |
+|--------------|-----------------|-------------------------------------------------------------------------|---------------|------------------|
+| SPGE         | -               | This engine does not require any input parameters.                      | -             | -                |
+| PPGE         | N               | N and D together influence the longest dimension of the plaque         | 1             | Greater than 0    |
+|              | D               | -                                                                       | 2             | Greater than 0    |
+|              | A               | The number of arms                                                      | 2             | Not less than 0   |
+|              | O               | Patch orientation                                                      | 45            | Not less than 0   |
+|              | suit_weight     | The weight of the patch shape during the generation process            | 0.5           | 0-1              |
+|              | shape_weight    | The weight of suitability during the generation process                 | 0.5           | 0-1              |
+| Nei-PGE      | beta            | Whether neighborhood repetition based on seed units controls the compactness of the patch | 1.6 | Greater than 0    |
+| Dis-PGE      | delta           | Control of patch shape based on a distance decay mechanism               | 2             | Any real number  |
+
 
 #### (4) Selection of Patch Size Generator
 
